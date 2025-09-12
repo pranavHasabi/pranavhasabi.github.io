@@ -1,4 +1,11 @@
+ 
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&display=swap");
+
+
+.hero-btn-group {
+    display: flex;
+    gap: 1rem; /* space between buttons */
+}
 
 
 *{
@@ -25,14 +32,16 @@
     margin:0 auto;
 }
 
-.navbar{
-    display: flex;
+.navbar {
+  display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding-top: 1rem ;
 }
-
+body {
+  padding-top: 5px; /* adjust based on your navbar height */
+}
 .logo{
     width: 200px;    
 }
@@ -458,6 +467,10 @@ a{
   #project4{
     margin-left:10% ;
     background-image: url(./images/projects/Project4.png);
+  }
+
+  #project5{
+    background-image: url(./images/projects/Project5.png);
   }
 
   @media (max-width:1200px) {
