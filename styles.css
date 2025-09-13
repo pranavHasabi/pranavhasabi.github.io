@@ -105,7 +105,7 @@ a {
     transition: all 3s;
     z-index: -1; /* This places the faded text behind the hero content */
 
-    bottom: -10%;
+    bottom: -15%;
     left: 0%;
 }
 
