@@ -3,425 +3,484 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website - Pranav Hasabi</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Pranav Hasabi - Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://placehold.co/32x32/1a202c/e2e8f0?text=PH">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins for a modern, clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
-<body>
-
-    <div id="wrapper">
-
-        <!-- 1.  Index & Name -->
-        <div class="container">
-            <div class="navbar">
-                <div class="logo-container">
-                    <img class="logo" src="./images/userAsset/name.png" alt="Pranav Hasabi Logo" />
-                </div>
-
-
-                <div class="nav-items">
-                    <div><a href="#projects">Projects</a></div>
-                    <div><a href="#Skills">Skills</a></div>
-                    <div><a href="#ContactMe">Contact me</a></div>
-
-                </div>
+<body class="bg-gray-100 text-gray-950 dark:bg-gray-950 dark:text-white transition-colors duration-300">
+    <!-- Header with Navigation and Resume Button -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-xl transition-colors duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center rounded-b-xl">
+            <!-- Site Title -->
+            <div id="goToTop" class="font-bold text-xl md:text-2xl text-indigo-600 dark:text-indigo-400 cursor-pointer">
+                Pranav Hasabi
             </div>
 
-            <!-- 2.  Middle image and paragraph -->
-            <!-- paragraph -->
-            <div class="hero-section">
-
-                <div class="faded-text">Pranav Hasabi</div>
-                <div class="hero-section-left">
-
-                    <div class="hero-text-heading">Hi! Pranav Hasabi</div>
-
-                    <div class="hero-text-heading hero-section-subheading">
-                        I am a <span class="role"></span>
-                    </div>
-
-                    <div class="hero-section-description">
-                        I'm a software developer and here is my portfolio website. Here you'll
-                        learn about my journey as a software developer.
-                    </div>
-
-                    <div class="hero-btn-group">
-                        <!-- <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pranavhasabi63@gmail.com&su=Hire%20Me&body=Hello,%20I%20would%20like%20to%20hire%20you." target="_blank" class="btn-pink">Hire me</a> -->
-
-                        <a href="Pranav Hasabi_resume.pdf" download class="btn-pink" id="btn">Download Resume</a>
-                    </div>
-
-
-                </div>
-
-
-                <!--Image  -->
-                <div class="hero-section-right">
-
-                    <div class="absolute icons icon-dots">
-                        <img src="./images/userAsset/MERN.png" height="65" alt="MERN logo" /> <!--mern -->
-                    </div>
-                    <div class="absolute icons icon-cube">
-                        <img src="./images/userAsset/C++.png" height="65" alt="C++ logo" /> <!--c++-->
-                    </div>
-                    <div class="absolute icons icon-circle">
-                        <img src="./images/userAsset/JS.png" height="75" alt="JavaScript logo" /> <!--JS-->
-                    </div>
-                    <div class="absolute icons icon-zigzag">
-                        <img src="./images/userAsset/zigzags1.png" height="45" alt="OOPS logo" /> <!--oops-->
-                    </div>
-                    <!-- <div class="absolute icons icon-plus"> -->
-                    <!-- <img src="./images/userAsset/plus1.png" height="40" alt="" />  -->
-                    <!-- </div> -->
-                    <div class="user-image">
-                        <img src="./images/userAsset/UserImage3.png" height="380" alt="" />
-                    </div>
-
-                </div>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">About</a>
+                <a href="#projects"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">Projects</a>
+                <a href="#contact"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <!-- Download Resume Button -->
+                <a href="Pranav Hasabi_resume.pdf" download
+                    class="inline-block px-5 py-2 rounded-full font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg btn-primary">
+                    Download Resume
+                </a>
+                <!-- Light/Dark Mode Toggle Button -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+                    <!-- Sun Icon (Light Mode) -->
+                    <svg id="sun-icon" class="h-6 w-6 text-yellow-500 hidden dark:block" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <!-- Moon Icon (Dark Mode) -->
+                    <svg id="moon-icon" class="h-6 w-6 text-gray-600 dark:hidden" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button"
+                    class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-300" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
             </div>
-
-            <!-- 3. Project Section -->
-            <div class="project-section" id="projects">
-                <h2 class="page-header">PROJECTS</h2>
-
-                <div class="project-container">
-
-                    <!-- Project 1: StudyNotion -->
-                    <div class="project-card" id="project1">
-                        <div class="project-number project-number-right">01</div>
-                        <div class="project-content project-content-left">
-
-                            <div class="project-skills-container">
-                                <img class="project-skill" src="./images/stack/Javascript.svg" alt="JavaScript" />
-                                <img class="project-skill" src="./images/stack/React.png" alt="React" />
-                                <img class="project-skill" src="./images/stack/NodeJs.svg" alt="Node.js" />
-                                <img class="project-skill" src="./images/stack/Express.png" alt="Express" />
-                                <img class="project-skill" src="./images/stack/MongoDB.svg" alt="MongoDB" />
-                                <img class="project-skill" src="./images/stack/Vercel.svg" alt="Vercel" />
-                            </div>
-
-                            <div class="project-heading">StudyNotion</div>
-                            <div class="project-subheading">
-                                A full-stack MERN application enabling students to create, consume, and rate educational
-                                content, while providing
-                                instructors a platform to build and manage courses. Features include user
-                                authentication, course creation, rating system,
-                                payment integration (Razorpay), and cloud-based media management with Cloudinary.
-                            </div>
-
-                            <div class="btn-grp">
-                                <a href="https://studynotion-frontend.vercel.app/" target="_blank">
-                                    <button class="btn-pink btn-project">Open Site</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: Drawing App -->
-                    <div class="project-card" id="project2">
-                        <div class="project-number project-number-left">02</div>
-                        <div class="project-content">
-
-                            <div class="project-skills-container">
-                                <img class="project-skill" src="./images/stack/HTML.png" alt="HTML" />
-                                <img class="project-skill" src="./images/stack/CSS.png" alt="CSS" />
-                                <img class="project-skill" src="./images/stack/Javascript.svg" alt="JavaScript" />
-                            </div>
-
-                            <div class="project-heading">Drawing App</div>
-                            <div class="project-subheading">
-                                The Canvas Drawing project empowers users to express their artistic ideas and create
-                                beautiful graphics directly on the canvas. With an intuitive user interface and a wide
-                                array of features, both beginners and intermediate-level developers can dive into the
-                                world of canvas drawing.
-                            </div>
-
-                            <div class="btn-grp">
-                                <a href="https://pranavhasabi.github.io/drawingApp/" target="_blank">
-                                    <button class="btn-pink btn-project">Open Site</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: Shopping Cart App -->
-                    <div class="project-card" id="project3">
-                        <div class="project-number project-number-right">03</div>
-                        <div class="project-content">
-
-                            <div class="project-skills-container">
-                                <img class="project-skill" src="./images/stack/HTML.png" alt="HTML" />
-                                <img class="project-skill" src="./images/stack/CSS.png" alt="CSS" />
-                                <img class="project-skill" src="./images/stack/Javascript.svg" alt="JavaScript" />
-                                <img class="project-skill" src="./images/stack/React.png" alt="React" />
-                            </div>
-
-                            <div class="project-heading">Shopping Cart App</div>
-                            <div class="project-subheading">
-                                A React-based shopping cart application with Redux state management, enabling smooth
-                                addition, removal, and tracking of items in the cart. It ensures efficient state
-                                management and a responsive, user-friendly interface for an enhanced shopping
-                                experience.
-                            </div>
-
-                            <div class="btn-grp">
-                                <a href="https://pranavhasabi-shoppingcart.netlify.app/" target="_blank">
-                                    <button class="btn-pink btn-project">Open Site</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: Weather App -->
-                    <div class="project-card" id="project4">
-                        <div class="project-number project-number-left">04</div>
-                        <div class="project-content">
-
-                            <div class="project-skills-container">
-                                <img class="project-skill" src="./images/stack/HTML.png" alt="HTML" />
-                                <img class="project-skill" src="./images/stack/CSS.png" alt="CSS" />
-                            </div>
-
-                            <div class="project-heading">Weather App</div>
-                            <div class="project-subheading">
-                                A weather condition tracker using the Open Weather API to retrieve real-time data for
-                                specified locations, displaying temperature, weather description, and additional details
-                                for an accurate weather overview.
-                            </div>
-
-                            <div class="btn-grp">
-                                <a href="https://pranavhasabi.github.io/weatherApp/" target="_blank">
-                                    <button class="btn-pink btn-project">Open Site</button>
-                                </a>2
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5: Password Generator -->
-                    <div class="project-card" id="project5">
-                        <div class="project-number project-number-right">05</div>
-                        <div class="project-content">
-
-                            <div class="project-skills-container">
-                                <img class="project-skill" src="./images/stack/HTML.png" alt="HTML" />
-                                <img class="project-skill" src="./images/stack/CSS.png" alt="CSS" />
-                                <img class="project-skill" src="./images/stack/Javascript.svg" alt="JavaScript" />
-                            </div>
-
-                            <div class="project-heading">Password Generator</div>
-                            <div class="project-subheading">
-                                A sleek, customizable password generator built with HTML, CSS, and JavaScript. Users can
-                                set length,
-                                include uppercase, lowercase, numbers, and symbols, with a strength indicator and
-                                one-click copy.
-                                Designed with a modern neon-themed UI for security and style.
-                            </div>
-
-
-                            <div class="btn-grp">
-                                <a href="https://pranavhasabi.github.io/passwordgenerator/" target="_blank">
-                                    <button class="btn-pink btn-project">Open Site</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- 4. Skill section -->
-            <div class="container skills-container" id="Skills">
-                <div class="skill-fade-text">Skills</div>
-
-                <div class="skill-container-left">
-                    <h2 class="skill-heading">
-                        <span class="caps">M</span>e and
-                        <br>
-                        MyTech Stack
-                    </h2>
-                    <div class="skill-subheading">
-                        <p>
-                            My name is Pranav Hasabi, and I have a Bachelor degree in Computer Science, at KLE
-                            Institute Of Technology, Hubballi
-                        </p>
-                        <br>
-                        <p>
-                            I have worked on a variety of projects and gained experience in
-                            Web Development which allowed me to develop strong skills in
-                            HTML, CSS, JS, React & Node.js .
-                        </p>
-                        <br>
-                        <p>
-
-                        </p>
-                    </div>
-                </div>
-
-                <div class="skill-container-right">
-                    <img src="./images/userAsset/blob vector.png" alt="" class="bob-style">
-
-                    <img src="./images/stack/c++.png" alt="c++ logo" class="skills-logo" />
-                    <img src="./images/stack/DSA.png" alt="DSA logo" class="skills-logo" />
-                    <img src="./images/stack/HTML.png" alt="html logo" class="skills-logo" />
-                    <img src="./images/stack/CSS.png" alt="css logo" class="skills-logo" />
-                    <img src="./images/stack/Bootstrap.svg" alt="bootstrap logo" class="skills-logo" />
-                    <img src="./images/stack/Tailwind.png" alt="tailwind logo" class="skills-logo" />
-                    <img src="./images/stack/Javascript.svg" alt="javascript logo" class="skills-logo" />
-                    <img src="./images/stack/Git.svg" alt="git logo" class="skills-logo" />
-                    <img src="./images/stack/Github.svg" alt="github logo" class="skills-logo" />
-                    <img src="./images/stack/MongoDB.svg" alt="mingoDB logo" class="skills-logo" />
-                    <img src="./images/stack/Express.png" alt="express logo" class="skills-logo" />
-                    <img src="./images/stack/React.png" alt="react logo" class="skills-logo" />
-                    <img src="./images/stack/NodeJs.svg" alt="nodejs logo" class="skills-logo" />
-                    <img src="./images/stack/Docker.svg" alt="docker logo" class="skills-logo" />
-                    <!-- <img src="./images/stack/MaterialUI.svg" alt="" class="skills-logo" /> -->
-                    <!-- <img src="./images/stack/Next.svg" alt="" class="skills-logo"/> -->
-                    <!-- <img src="./images/stack/Redux.svg" alt="" class="skills-logo"/> -->
-                    <!-- <img src="./images/stack/Graphql.svg" alt="" class="skills-logo" /> -->
-                    <!-- <img src="./images/stack/Vercel.svg" alt="" class="skills-logo" /> -->
-                    <!-- <img src="./images/stack/ChartJs.svg" alt="" class="skills-logo" /> -->
-                    <!-- <img src="./images/stack/Bash.svg" alt="" class="skills-logo" /> -->
-                    <!-- <img src="./images/stack/K8s.svg" alt="" class="skills-logo" /> -->
-                </div>
-
-
-            </div>
-
-            <!-- 5. Contact me -->
-            <div class="contactus-form-container" id="ContactMe">
-
-                <div class="container">
-
-                    <h1 class="contactus-heading">Contact me</h1>
-
-                    <h3 class="contactus-sub-heading">
-                        Questions, thoughts, or just want to say hello?
-                    </h3>
-
-
-                    <div class="contactus-form-container">
-                        <form class="form" id="contact-form">
-                            <div class="form-field-container">
-                                <input class="formfield" type="text" name="name" id="Name" placeholder="Enter your name"
-                                    required />
-
-                                <input class="formfield" type="email" name="email" id="Email"
-                                    placeholder="Enter your email address" required />
-
-                                <input class="formfield" type="number" name="phone" id="Phone"
-                                    placeholder="Enter your Phone Number" />
-
-                                <textarea name="message" id="Message" cols="30" rows="10"
-                                    class="formfield formfield-textarea" placeholder="Enter your message"
-                                    required></textarea>
-                            </div>
-
-                            <div>
-                                <button type="submit" class="btn-pink" id="submit-btn">
-                                    Send Message <i class="submit-icon fa-solid fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- 6. Footer -->
-            <footer>
-                <div class="container">
-                    <div class="footer-wrapper">
-
-                        <div class="footer-faded-text">Pranav Hasabi</div>
-
-                        <div class="link-wrapper">
-                            <div>
-                                <a href="#projects">Projects</a>
-                            </div>
-                            <div>
-                                <a href="#skills">Skills</a>
-                            </div>
-                            <div>
-                                <a href="#contactme">Contact me</a>
-                            </div>
-                        </div>
-
-                        <div class="icon-wrapper">
-                            <div>
-
-                            </div>
-                            <a href="">
-                                <i class="fa-brands fa-linkedin icon"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa-brands fa-github icon"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa-brands fa-twitter icon"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa-brands fa-instagram icon"></i>
-                            </a>
-                            <i class="fa-regular fa-envelope icon"></i>
-                        </div>
-
-                    </div>
-                </div>
-            </footer>
         </div>
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 transition-colors duration-300">
+            <div class="flex flex-col items-center py-4 space-y-4">
+                <a href="#about"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">About</a>
+                <a href="#projects"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">Projects</a>
+                <a href="#contact"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-        <!-- EmailJS SDK -->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script type="text/javascript">
-            (function () {
-                emailjs.init("jet2h1wb8aHwaNozY"); // ✅ your Public Key
-            })();
+    <main class="container mx-auto px-4 py-16">
+        <!-- Hero Section -->
+        <section id="hero"
+            class="text-center py-20 rounded-3xl fade-in bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900 transition-colors duration-300">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">I'm Pranav Hasabi.</h1>
+            <p
+                class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 transition-colors duration-300">
+                A passionate Full Stack Developer building dynamic and scalable web applications.
+            </p>
+            <a href="#contact"
+                class="inline-block px-8 py-3 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 font-medium shadow-lg btn-primary">
+                Let's Connect
+            </a>
+            <svg class="mx-auto mt-8 w-24 h-24 text-indigo-600 dark:text-indigo-400 transition-colors duration-300"
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 6.5C8.96 6.5 6.5 8.96 6.5 12C6.5 15.04 8.96 17.5 12 17.5C15.04 17.5 17.5 15.04 17.5 12C17.5 8.96 15.04 6.5 12 6.5Z"
+                    fill="currentColor" />
+                <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+        </section>
 
-            document.getElementById("contact-form").addEventListener("submit", function (event) {
-                event.preventDefault();
+        <!-- About Me Section -->
+        <section id="about" class="py-16 fade-in">
+            <div
+                class="max-w-4xl mx-auto bg-white dark:bg-gray-900 p-8 md:p-12 rounded-3xl shadow-xl transition-colors duration-300">
+                <h2 class="text-3xl font-semibold mb-6 text-center">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                    <img src="/images/userAsset/UserImage3.png" alt="Pranav Hasabi's profile picture"
+                        class="w-36 h-36 rounded-full mb-6 md:mb-0 shadow-lg">
+                    <div class="text-gray-700 dark:text-gray-300 text-lg transition-colors duration-300">
+                        <p class="mb-4">
+                            Hi, I'm Pranav. After my degree in Computer Science, I decided to pursue my passion for
+                            software development. I honed my skills through a targeted MERN Stack bootcamp and a
+                            hands-on software development internship.
+                        </p>
+                        <p class="mb-4">
+                            My focus is on creating responsive, efficient, and user-friendly web applications. My
+                            projects demonstrate a strong command of modern front-end frameworks like React and back-end
+                            technologies like Node.js and MongoDB.
+                        </p>
+                        <p>
+                            I am a quick learner and a dedicated problem-solver, eager to contribute my skills to a
+                            technical team. Let's connect and build something great together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                // date sent in mail
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 fade-in">
+            <h2 class="text-6xl font-semibold mb-10 text-center">My Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1: StudyNotion -->
+                <div
+                    class="project-card bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <img src="/images/projects/Project1.png" alt="Screenshot of the StudyNotion Ed-Tech Platform"
+                        class="rounded-lg mb-6 shadow-sm">
+                    <h3 class="project-title text-2xl font-bold mb-2 transition-colors duration-300">StudyNotion - An
+                        Ed-Tech Platform</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
+                        A full-stack MERN application for creating and consuming educational content, featuring user
+                        authentication, course management, payment integration (Razorpay), and cloud media storage with
+                        Cloudinary.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm font-medium mb-4">
+                        <span class="font-bold">Tech Stack:</span> MERN Stack
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://studynotion-frontend.vercel.app/" target="_blank"
+                            class="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
+                            Live Demo
+                            <span class="project-arrow ml-1 transition-transform duration-300">&rarr;</span>
+                        </a>
+                        <a href="https://github.com/pranavHasabi/Apptified" target="_blank"
+                            class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
 
-                const date = new Date().toLocaleString();
-                emailjs.sendForm(
-                    "service_cru7a7o",   // ✅ Service ID
-                    "template_hr4euto",  // ✅ Template ID
-                    this,
-                    "jet2h1wb8aHwaNozY", // ✅ Public Key
-                    {
-                        date: date       // Add the date parameter here
-                    }
-                ).then(
+                <!-- Project 2: Shopping-Cart-App -->
+                <div
+                    class="project-card bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <img src="/images/projects/Project2.png" alt="Screenshot of the Shopping Cart App"
+                        class="rounded-lg mb-6 shadow-sm">
+                    <h3 class="project-title text-2xl font-bold mb-2 transition-colors duration-300">Shopping-Cart-App
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
+                        A seamless shopping cart application developed with React and Redux State Management, enabling
+                        seamless addition of items to the cart and efficient state management for enhanced user
+                        experience and interactivity.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm font-medium mb-4">
+                        <span class="font-bold">Tech Stack:</span> Reactjs
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://pranavhasabi-shoppingcart.netlify.app/" target="_blank"
+                            class="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
+                            Live Demo
+                            <span class="project-arrow ml-1 transition-transform duration-300">&rarr;</span>
+                        </a>
+                        <a href="https://github.com/pranavHasabi/shopping-cart" target="_blank"
+                            class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Drawing App -->
+                <div
+                    class="project-card bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <img src="/images/projects/Project3.png" alt="Screenshot of the Drawing App"
+                        class="rounded-lg mb-6 shadow-sm">
+                    <h3 class="project-title text-2xl font-bold mb-2 transition-colors duration-300">Drawing App</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
+                        An interactive web application enabling users to draw on an HTML5 canvas with features like pen
+                        color selection, an eraser tool, and artwork download.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm font-medium mb-4">
+                        <span class="font-bold">Tech Stack:</span> HTML, CSS, JavaScript
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://pranavhasabi.github.io/drawingApp/" target="_blank"
+                            class="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
+                            Live Demo
+                            <span class="project-arrow ml-1 transition-transform duration-300">&rarr;</span>
+                        </a>
+                        <a href="https://github.com/pranavHasabi/drawingApp" target="_blank"
+                            class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Weather App -->
+                <div
+                    class="project-card bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <img src="/images/projects/Project4.png" alt="Screenshot of the Weather App"
+                        class="rounded-lg mb-6 shadow-sm">
+                    <h3 class="project-title text-2xl font-bold mb-2 transition-colors duration-300">Weather App</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
+                        A weather condition tracker leveraging the Open Weather API to retrieve real-time weather data
+                        for specified locations.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm font-medium mb-4">
+                        <span class="font-bold">Tech Stack:</span> HTML, CSS, API
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://pranavhasabi.github.io/weatherApp/" target="_blank"
+                            class="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
+                            Live Demo
+                            <span class="project-arrow ml-1 transition-transform duration-300">&rarr;</span>
+                        </a>
+                        <a href="https://github.com/pranavHasabi/weatherApp" target="_blank"
+                            class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Razorpay Clone -->
+                <div
+                    class="project-card bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <img src="/images/projects/Project5.png" alt="Razorpay Clone preview"
+                        class="rounded-lg mb-6 shadow-sm">
+                    <h3 class="project-title text-2xl font-bold mb-2 transition-colors duration-300">Razorpay Clone</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
+                        A user-friendly and responsive clone of the Razorpay payment solution using the Tailwind CSS
+                        Framework.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm font-medium mb-4">
+                        <span class="font-bold">Tech Stack:</span> Reactjs, Tailwind CSS
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="inline-flex items-center text-gray-400 font-semibold">
+                            Live Demo Coming Soon
+                        </a>
+                        <a href="https://github.com/pranavHasabi/razorPayClone" target="_blank"
+                            class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Project 6: password generator -->
+                <div
+                    class="project-card bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <img src="/images/projects/Project6.png" alt="Razorpay Clone preview"
+                        class="rounded-lg mb-6 shadow-sm">
+                    <h3 class="project-title text-2xl font-bold mb-2 transition-colors duration-300">Razorpay Clone</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
+                        A sleek, customizable password generator built with HTML, CSS, and JavaScript. Users can set
+                        length, include uppercase, lowercase, numbers, and symbols, with a strength indicator and
+                        one-click copy. Designed with a modern neon-themed UI for security and style.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm font-medium mb-4">
+                        <span class="font-bold">Tech Stack:</span> HTML, CSS, JavaScript
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://pranavhasabi.github.io/passwordgenerator/" target="_blank"
+                            class="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
+                            Live Demo
+                            <span class="project-arrow ml-1 transition-transform duration-300">&rarr;</span>
+                        </a>
+                        <a href="https://github.com/pranavHasabi/passwordgenerator" target="_blank"
+                            class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 fade-in">
+            <div
+                class="max-w-2xl mx-auto bg-white dark:bg-gray-900 p-8 md:p-12 rounded-3xl shadow-xl text-center transition-colors duration-300">
+                <h2 class="text-3xl font-semibold mb-6">Get in Touch</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-8 transition-colors duration-300">
+                    I'm currently open to new opportunities. Feel free to reach out to discuss a project or just say
+                    hello!
+                </p>
+                <div class="flex justify-center flex-wrap gap-4 mb-8">
+
+                    <a href="mailto:pranavhasabi63@gmail.com?subject=Contact%20Request&body=Hello%20Pranav,%0AI%20would%20like%20to%20get%20in%20touch."
+                        class="inline-block px-6 py-3 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 font-medium shadow-md hover:shadow-lg btn-primary">
+                        📧 Email Me
+                    </a>
+
+
+
+
+                    <a href="tel:+918904801894"
+                        class="inline-block px-6 py-3 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 font-medium shadow-md hover:shadow-lg btn-primary">
+                        📞 Call Me
+                    </a>
+                </div>
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Your Name" aria-label="Your Name" required
+                            class="w-full p-3 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors">
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email"
+                            required
+                            class="w-full p-3 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors">
+                    </div>
+                    <div>
+                        <textarea id="message" name="message" rows="4" placeholder="Your Message"
+                            aria-label="Your Message" required
+                            class="w-full p-3 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"></textarea>
+                    </div>
+                    <!-- hidden date field (JS will fill this in before sending) -->
+                    <input type="hidden" id="date" name="date" class="">
+
+                    <!-- Status message -->
+                    <div id="formStatus" class="hidden text-sm font-medium p-3 rounded-xl text-center">
+                    </div>
+
+
+                    <div>
+                        <button type="submit"
+                            class="w-full px-8 py-3 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 font-medium shadow-lg btn-primary">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 text-sm text-gray-500 dark:text-gray-400 transition-colors duration-300">
+        &copy; 2023 Pranav Hasabi. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+        document.querySelectorAll('.fade-in').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme');
+
+        // Apply theme on load
+        if (currentTheme === 'dark') {
+            body.classList.add('dark');
+        } else {
+            body.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const newTheme = body.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+        });
+
+
+    </script>
+
+    
+
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("jet2h1wb8aHwaNozY"); // 🔑 Your Public Key
+        })();
+
+        const form = document.getElementById("contact-form");
+        const formStatus = document.getElementById("formStatus");
+        const dateInput = document.getElementById("date");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Fill hidden date field
+            dateInput.value = new Date().toLocaleString();
+
+            // Sending state
+            formStatus.className = "sending is-visible";
+            formStatus.textContent = "⏳ Sending...";
+
+            emailjs
+                .sendForm(
+                    "service_cru7a7o", // ✅ Your Service ID
+                    "template_hr4euto", // ✅ Your Template ID
+                    form,
+                    "jet2h1wb8aHwaNozY" // ✅ Your Public Key
+                )
+                .then(
                     function () {
-                        alert("✅ Message sent successfully!");
-                        document.getElementById("contact-form").reset();
+                        // ✅ Success
+                        formStatus.className = "success is-visible";
+                        formStatus.textContent = "✅ Message sent successfully!";
+                        form.reset();
+
+                        setTimeout(() => {
+                            formStatus.classList.remove("is-visible");
+                            setTimeout(() => formStatus.classList.add("hidden"), 400);
+                        }, 4000);
                     },
                     function (error) {
-                        alert("❌ Failed to send message. Error: " + JSON.stringify(error));
+                        // ❌ Failure
+                        console.error("EmailJS error:", error);
+                        formStatus.className = "error is-visible";
+                        formStatus.textContent = "❌ Failed to send message. Please try again.";
+
+                        setTimeout(() => {
+                            formStatus.classList.remove("is-visible");
+                            setTimeout(() => formStatus.classList.add("hidden"), 400);
+                        }, 4000);
                     }
                 );
-            });
-        </script>
+        });
 
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-        <script>
-            var typeData = new Typed(".role", {
-                strings: [
-                    "Full Stack Developer",
-                    "Web Developer",
-                    "Backend Developer",
-                    "Coder"
-                ],
-                loop: true,
-                typeSpeed: 100,
-                backSpeed: 80,
-                backDelay: 1000,
-            });
-        </script>
+        // Smooth scroll to top on refresh
+        window.onload = function () {
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 50); // small delay to override browser's restore
+        };
+        // Smooth scroll to top when clicking on name in navbar
+    document.getElementById("goToTop").addEventListener("click", () => {
+    window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+    });
+    });
+
+
+
+
+    </script>
+
+
+
+
 
 </body>
 
