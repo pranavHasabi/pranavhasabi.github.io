@@ -36,28 +36,7 @@ h3, h4, h5, h6 {
     transform: translateY(0);
 }
 
-/* Custom scrollbar for better aesthetics */
-::-webkit-scrollbar {
-    width: 8px;
-}
 
-::-webkit-scrollbar-track {
-    background: #f1f5f9;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #94a3b8;
-    border-radius: 5px;
-}
-
-.dark ::-webkit-scrollbar-track {
-    background: #1e293b;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-    background: #475569;
-}
 
 /* Project Card Hover Effects - Sleeker version */
 .project-card {
@@ -88,17 +67,7 @@ h3, h4, h5, h6 {
     box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.08);
 }
 
-.btn-secondary {
-    transition: all 0.3s ease-in-out;
-}
 
-.btn-secondary:hover {
-    background-color: #f1f5f9;
-}
-
-.dark .btn-secondary:hover {
-    background-color: #2d3748;
-}
 
 #formStatus {
     width: 100%;
@@ -150,3 +119,32 @@ h3, h4, h5, h6 {
     transform: translateY(8px);
 }
 
+
+/* Fade + scale animation for popup */
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+/* Status message styles */
+#resumeStatus {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#resumeStatus.is-visible { opacity: 1; transform: translateY(0); }
+#resumeStatus.sending { background:#eef2ff; border-color:#c7d2fe; color:#3730a3; }
+#resumeStatus.success { background:#dcfce7; border-color:#86efac; color:#166534; }
+#resumeStatus.error   { background:#fee2e2; border-color:#fca5a5; color:#991b1b; }
