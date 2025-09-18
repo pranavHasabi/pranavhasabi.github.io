@@ -446,8 +446,8 @@
         const html = document.documentElement; // target <html>, not <body>
         const currentTheme = localStorage.getItem('theme');
 
-        // Apply theme on load
-        if (currentTheme === 'dark') {
+        // Apply theme on load (default to dark)
+        if (currentTheme === 'dark' || currentTheme === null) {
             html.classList.add('dark');
         } else {
             html.classList.remove('dark');
