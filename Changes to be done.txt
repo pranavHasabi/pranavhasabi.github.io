@@ -1,0 +1,3 @@
+1. nab bar is looking big in mobile 
+2. hero section is also looking odd/big/no proper padding
+3. dark <-> light button not working

@@ -12,6 +12,9 @@
     <!-- Google Fonts - Poppins for a modern, clean look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -21,9 +24,10 @@
     <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-xl transition-colors duration-300">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center rounded-b-xl">
             <!-- Site Title -->
-            <div id="goToTop" class="font-bold text-xl md:text-2xl text-indigo-600 dark:text-indigo-400 cursor-pointer">
+            <div id="goToTop" class="font-bold text-lg md:text-2xl text-indigo-600 dark:text-indigo-400 cursor-pointer">
                 Pranav Hasabi
             </div>
+
 
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-8">
@@ -80,15 +84,21 @@
         </nav>
     </header>
 
-    <main class="container mx-auto px-4 py-16">
+    <main class="container mx-auto px-6 md:px-12 lg:px-25 py-16">
+
         <!-- Hero Section -->
         <section id="hero"
-            class="text-center py-20 rounded-3xl fade-in bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900 transition-colors duration-300">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">I'm Pranav Hasabi.</h1>
+            class="text-center py-12 md:py-20 px-6 md:px-12 rounded-3xl fade-in bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900 transition-colors duration-300">
+
+            <h1 class="text-2xl sm:text-3xl md:text-6xl font-bold mb-4 leading-tight">
+                I'm Pranav Hasabi.
+            </h1>
+
             <p
-                class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 transition-colors duration-300">
+                class="text-base md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 transition-colors duration-300">
                 A passionate Full Stack Developer building dynamic and scalable web applications.
             </p>
+
             <a href="#contact"
                 class="inline-block px-8 py-3 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 font-medium shadow-lg btn-primary">
                 Let's Connect
@@ -132,7 +142,7 @@
 
         <!-- Projects Section -->
         <section id="projects" class="py-16 fade-in">
-            <h2 class="text-6xl font-semibold mb-10 text-center">My Projects</h2>
+            <h2 class="text-4xl font-semibold mb-10 text-center">My Projects</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Project 1: StudyNotion -->
                 <div
@@ -307,11 +317,11 @@
                 </p>
                 <div class="flex justify-center flex-wrap gap-4 mb-8">
 
-                    <a href="mailto:pranavhasabi63@gmail.com?subject=Contact%20Request&body=Hello%20Pranav,%0AI%20would%20like%20to%20get%20in%20touch."
+                    <a href="mailto:pranavhasabi63@gmail.com?subject=Contact%20Request&body=Hello%20Pranav,%0A%0AI%20would%20like%20to%20get%20in%20touch."
+                        target="_blank"
                         class="inline-block px-6 py-3 rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 font-medium shadow-md hover:shadow-lg btn-primary">
                         📧 Email Me
                     </a>
-
 
 
 
@@ -381,28 +391,31 @@
             mobileMenu.classList.toggle('hidden');
         });
 
+
+    </script>
+
+    <script>
         // Theme Toggle Logic
         const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
+        const html = document.documentElement; // target <html>, not <body>
         const currentTheme = localStorage.getItem('theme');
 
         // Apply theme on load
         if (currentTheme === 'dark') {
-            body.classList.add('dark');
+            html.classList.add('dark');
         } else {
-            body.classList.remove('dark');
+            html.classList.remove('dark');
         }
 
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark');
-            const newTheme = body.classList.contains('dark') ? 'dark' : 'light';
+            html.classList.toggle('dark');
+            const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
             localStorage.setItem('theme', newTheme);
         });
-
-
     </script>
 
-    
+
+
 
 
     <!-- EmailJS SDK -->
@@ -466,12 +479,12 @@
             }, 50); // small delay to override browser's restore
         };
         // Smooth scroll to top when clicking on name in navbar
-    document.getElementById("goToTop").addEventListener("click", () => {
-    window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-    });
-    });
+        document.getElementById("goToTop").addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
 
 
 
